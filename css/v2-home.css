@@ -148,6 +148,8 @@
 .prx.pop .prx-btn:hover{background:var(--copper2)}
 .prx:nth-child(3) .prx-btn:hover{border-color:var(--sage);color:var(--sage)}
 .pricing-note{font-family:var(--mono);font-size:var(--fs-sm);letter-spacing:1px;color:var(--text3);margin-top:32px;text-align:center}
+/* Hidden on phones: the 6-month-minimum note stays on tablet/desktop only */
+@media(max-width:768px){.pricing-note{display:none}}
 
 /* ============ RESPONSIVE ============ */
 @media(max-width:900px){
