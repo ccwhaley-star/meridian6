@@ -556,6 +556,8 @@
       .catch(function(){ return false; })
       .then(function(leadOk){
         if(!leadOk){ btn.disabled=false;btn.textContent='Get My Free Audit'; show(HTML_LEAD_FAILED); return; }
+        // Lead is recorded: report it to GA4 (imported into Google Ads as the lead conversion).
+        if(typeof window.gtag==='function'){ window.gtag('event','generate_lead',{form_name:'free-audit',has_website:urlVal?'yes':'no'}); }
         if(!urlVal){ show(HTML_THANKS); return; }
         // 2. Kick off the instant audit and poll for the report.
         runAudit({id:newId(),website:urlVal,name:fd.get('name'),email:fd.get('email'),phone:fd.get('phone')});
