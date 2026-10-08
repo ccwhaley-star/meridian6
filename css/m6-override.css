@@ -385,3 +385,13 @@ a.case-url:hover { color: var(--copper); }
 @media (prefers-reduced-motion: reduce) {
   .hero-flip::before, .flip-inner::after, .hero-flip:not(.flipped) .flip-inner { animation: none; }
 }
+
+/* Phones: the survey grid reads at desktop opacity but vanishes on small bright
+   screens - tighter cells and stronger lines keep it visible behind the hero */
+@media (max-width: 700px) {
+  .grid-bg {
+    background-image: linear-gradient(rgba(255,255,255,.09) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.09) 1px, transparent 1px);
+    background-size: 52px 52px;
+  }
+}
