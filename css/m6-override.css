@@ -331,3 +331,51 @@ a.case-url:hover { color: var(--copper); }
   .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; text-align: left; gap: 16px; padding: 18px 20px; }
   .footer-bottom .client-login { border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; color: var(--text2); }
 }
+
+
+/* ---- Flip back: before/after traffic chart (sample data until real analytics drop in) ---- */
+@media (min-width: 901px) { .hero-tile.flip-back { grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); } }
+.fb-chart { margin: 0; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.fb-chart-cap { font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: .14em; text-transform: uppercase; color: var(--text2); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.fb-chart-cap span { color: var(--text3); letter-spacing: .04em; text-transform: none; font-size: 11px; }
+.fb-chart svg { width: 100%; height: auto; display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 10px 6px; box-sizing: border-box; }
+.fb-take { justify-content: center; }
+.fb-big { font-size: clamp(40px, 4.2vw, 54px); line-height: 1; color: var(--copper2); font-weight: 600; letter-spacing: -.02em; }
+.fb-big span { display: block; font-family: var(--sans); font-size: var(--fs-sm); color: var(--text2); font-weight: 400; margin-top: 8px; letter-spacing: 0; line-height: 1.5; }
+.fb-rows2 { border-top: 1px solid rgba(201,138,70,.35); margin-top: 4px; }
+.fb-rows2 div { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: var(--fs-sm); color: var(--text2); }
+.fb-rows2 b { color: var(--text); font-weight: 600; }
+@media (max-width: 900px) {
+  .fb-chart svg { padding: 8px 6px 3px; }
+  .fb-big { font-size: 34px; }
+}
+
+/* ---- First-visit tease: the card nudges while light leaks from its right edge ---- */
+.hero-flip { position: relative; }
+/* soft halo spilling past the right edge */
+.hero-flip::before { content: ""; position: absolute; top: 4%; bottom: 4%; right: -60px; width: 170px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(226,166,116,.95), rgba(201,138,70,.4) 50%, transparent 76%);
+  filter: blur(22px); opacity: 0; pointer-events: none;
+  animation: m6-leak 4.6s ease-in-out 1.4s infinite; }
+/* crisp light-crack hugging the edge, like a door ajar */
+.hero-flip::after { content: ""; position: absolute; top: 6%; bottom: 6%; right: -3px; width: 4px; border-radius: 4px;
+  background: linear-gradient(rgba(226,166,116,0), rgba(234,180,130,.95) 25%, rgba(234,180,130,.95) 75%, rgba(226,166,116,0));
+  box-shadow: 0 0 18px 4px rgba(212,149,106,.55); opacity: 0; pointer-events: none;
+  animation: m6-leak 4.6s ease-in-out 1.4s infinite; }
+.hero-flip.flipped::before, .hero-flip.flipped::after { animation: none; opacity: 0; }
+.hero-flip:not(.flipped) .flip-inner { transform-origin: left center; animation: m6-nudge 4.6s cubic-bezier(.45,.05,.3,1) 1.4s infinite; }
+@keyframes m6-nudge {
+  0%, 28%, 100% { transform: rotateY(0); }
+  8%  { transform: rotateY(-7deg); }
+  16% { transform: rotateY(-2deg); }
+  22% { transform: rotateY(-4.5deg); }
+}
+@keyframes m6-leak {
+  0%, 30%, 100% { opacity: 0; }
+  8%  { opacity: 1; }
+  16% { opacity: .3; }
+  22% { opacity: .8; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-flip::before, .hero-flip::after, .hero-flip:not(.flipped) .flip-inner { animation: none; }
+}

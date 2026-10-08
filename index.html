@@ -59,7 +59,7 @@
   #audit-results span[style*="color:#6b"]{color:#666!important}
 }
 </style>
-<link rel="stylesheet" href="css/m6-override.css?v=20260929a">
+<link rel="stylesheet" href="css/m6-override.css?v=20261008a">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-K4VMQGFP"></script>
 <script>
@@ -126,11 +126,11 @@
       <div class="hero-ctas hero-in hero-in-d3">
         <a href="#cta" class="btn-primary">Get My Competitive Audit</a>
         <a href="https://calendly.com/meridian6/30min" target="_blank" rel="noopener" class="btn-secondary">Book a Free Call</a>
-        <button type="button" class="flip-tab" id="flip-open" aria-controls="flip-back" aria-expanded="false">See sample<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
+        <button type="button" class="flip-tab" id="flip-open" aria-controls="flip-back" aria-expanded="false">See results<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
       </div>
       <p class="hero-micro hero-in hero-in-d3">Free. Personal. Built around your business.</p>
     </div>
-    <section class="hero-tile flip-face flip-back" id="flip-back" aria-label="Before and after report card" inert>
+    <section class="hero-tile flip-face flip-back" id="flip-back" aria-label="Before and after: monthly website traffic" inert>
       <div class="fb-head">
         <div>
           <div class="fb-k">Real client &#183; before &amp; after</div>
@@ -138,20 +138,57 @@
         </div>
         <button type="button" class="fb-back" id="flip-close">&#8592; Back</button>
       </div>
-      <div class="fb-pair">
-        <figure class="fb-shot before"><div class="fb-scroll" tabindex="0" aria-label="Old homepage, scrollable"><img data-src="img/showcase/lawn-care-medics-2023.jpg" alt="Lawn Care Medics full homepage in 2023" width="720" height="785"></div><span class="fb-hint" aria-hidden="true">Scroll &#8597;</span><figcaption class="fb-cap"><span class="gr gr-d">D</span>Old website</figcaption></figure>
-        <figure class="fb-shot"><div class="fb-scroll" tabindex="0" aria-label="New homepage, scrollable"><img data-src="img/showcase/lawn-care-medics-today.jpg" alt="Lawn Care Medics full homepage today" width="720" height="3195"></div><span class="fb-hint" aria-hidden="true">Scroll &#8597;</span><figcaption class="fb-cap"><span class="gr gr-a">A</span>New website</figcaption></figure>
-      </div>
-      <div class="fb-card">
-        <div class="fb-rows">
-          <div class="fb-total">Overall grade<span class="gr gr-d">D</span><i>&#8594;</i><span class="gr gr-a">A</span></div>
-          <div>First impression<span class="gr gr-d">D</span><i>&#8594;</i><span class="gr gr-a">A</span></div>
-          <div>Clear next step<span class="gr gr-f">F</span><i>&#8594;</i><span class="gr gr-a">A</span></div>
-          <div>Trust &amp; reviews<span class="gr gr-d">D</span><i>&#8594;</i><span class="gr gr-a">A</span></div>
-          <div>Local search<span class="gr gr-c">C</span><i>&#8594;</i><span class="gr gr-a">A</span></div>
-          <div>AI visibility<span class="gr gr-f">F</span><i>&#8594;</i><span class="gr gr-a">A</span></div>
+      <figure class="fb-chart">
+        <figcaption class="fb-chart-cap">Monthly website visits<span>Sample data &#8212; live analytics drop in here</span></figcaption>
+        <svg viewBox="0 0 720 330" role="img" aria-label="Line chart of monthly website visits: flat around 150 to 170 per month before the new site, then rising steadily to 560 per month in the six months after launch">
+          <defs>
+            <linearGradient id="fbGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#d4956a" stop-opacity=".26"/>
+              <stop offset="1" stop-color="#d4956a" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- grid -->
+          <g stroke="rgba(255,255,255,.07)" stroke-width="1">
+            <line x1="46" y1="282" x2="704" y2="282"/>
+            <line x1="46" y1="193.3" x2="704" y2="193.3"/>
+            <line x1="46" y1="104.7" x2="704" y2="104.7"/>
+            <line x1="46" y1="16" x2="704" y2="16"/>
+          </g>
+          <g font-family="'Space Mono',monospace" font-size="10" fill="#6f6a60">
+            <text x="38" y="285" text-anchor="end">0</text>
+            <text x="38" y="196" text-anchor="end">200</text>
+            <text x="38" y="108" text-anchor="end">400</text>
+            <text x="38" y="20" text-anchor="end">600</text>
+            <text x="46" y="306" text-anchor="middle">Jan</text>
+            <text x="165.6" y="306" text-anchor="middle">Mar</text>
+            <text x="285.3" y="306" text-anchor="middle">May</text>
+            <text x="404.9" y="306" text-anchor="middle">Jul</text>
+            <text x="524.5" y="306" text-anchor="middle">Sep</text>
+            <text x="644.2" y="306" text-anchor="middle">Nov</text>
+          </g>
+          <!-- launch marker -->
+          <line x1="375" y1="16" x2="375" y2="282" stroke="rgba(212,149,106,.45)" stroke-width="1.5" stroke-dasharray="3 5"/>
+          <text x="383" y="30" font-family="'Space Mono',monospace" font-size="11" letter-spacing="1" fill="#d4956a">NEW SITE LIVE</text>
+          <!-- after: area + line -->
+          <path d="M345.1 211.1 L404.9 180 L464.7 149 L524.5 113.5 L584.4 82.5 L644.2 55.9 L704 33.7 L704 282 L345.1 282 Z" fill="url(#fbGrad)"/>
+          <polyline points="345.1,211.1 404.9,180 464.7,149 524.5,113.5 584.4,82.5 644.2,55.9 704,33.7" fill="none" stroke="#d4956a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- before: flat gray -->
+          <polyline points="46,215.5 105.8,208.8 165.6,219.9 225.5,206.6 285.3,213.3 345.1,211.1" fill="none" stroke="#6f6a60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="704" cy="33.7" r="5" fill="#d4956a" stroke="#121110" stroke-width="2"/>
+          <g font-family="'Space Mono',monospace" font-size="11" fill="#9a9184">
+            <text x="48" y="198">old site &#183; ~160 / mo</text>
+            <text x="696" y="24" text-anchor="end" fill="#e9e4d8">560 / mo</text>
+          </g>
+        </svg>
+      </figure>
+      <div class="fb-card fb-take">
+        <div class="fb-big">3.5&#215;<span>monthly visitors six months after launch</span></div>
+        <div class="fb-rows2">
+          <div><span>Before</span><b>~160 visits / mo</b></div>
+          <div><span>After</span><b>560 visits / mo</b></div>
+          <div><span>Every visit tracked</span><b>Monthly report</b></div>
         </div>
-        <a href="#cta" class="btn-primary" id="fb-cta">Get Your Free Report Card</a>
+        <a href="#cta" class="btn-primary" id="fb-cta">Get Your Free Audit</a>
       </div>
     </section>
     </div></div>
