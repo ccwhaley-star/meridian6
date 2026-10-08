@@ -204,7 +204,8 @@ a.case-url:hover { color: var(--copper); }
 .flip-face { grid-area: 1 / 1; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
 .hero-tile.flip-front { display: flex; flex-direction: column; justify-content: center; }
 .hero-tile.flip-back { transform: rotateY(180deg); padding: 34px 44px; display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: 24px 32px; align-content: center; }
-.hero-flip.flipped .flip-inner { transform: rotateY(180deg); }
+/* negative: the right edge swings toward the viewer, continuing the tease's motion */
+.hero-flip.flipped .flip-inner { transform: rotateY(-180deg); }
 .hero-tile .hero-ctas { align-items: center; }
 
 .flip-tab, .fb-back {
