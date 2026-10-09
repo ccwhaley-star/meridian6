@@ -140,7 +140,7 @@
       </div>
       <figure class="fb-chart">
         <figcaption class="fb-chart-cap">Monthly website visits</figcaption>
-        <svg viewBox="0 0 720 330" role="img" aria-label="Line chart of monthly website visits: flat around 150 to 170 per month before the new site, then rising steadily to 560 per month in the six months after launch">
+        <svg viewBox="0 0 720 330" role="img" aria-label="Line chart of monthly website visits: flat around 150 to 170 per month before the new site, then a short website-rebuild window, then rising steadily to 560 per month in the six months after launch">
           <defs>
             <linearGradient id="fbGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0" stop-color="#d4956a" stop-opacity=".26"/>
@@ -166,13 +166,11 @@
             <text x="524.5" y="306" text-anchor="middle">Sep</text>
             <text x="644.2" y="306" text-anchor="middle">Nov</text>
           </g>
-          <!-- migration window: ~a week and a half between the old site ending and launch -->
-          <rect x="345.1" y="16" width="21" height="266" fill="rgba(143,184,148,.10)"/>
-          <line x1="345.1" y1="16" x2="345.1" y2="282" stroke="rgba(143,184,148,.28)" stroke-width="1"/>
-          <text class="fbc-mig" transform="rotate(-90 356 149)" x="356" y="149" text-anchor="middle" font-family="'Space Mono',monospace" font-size="9" letter-spacing="2" fill="rgba(143,184,148,.85)">MIGRATION</text>
-          <!-- launch marker -->
-          <line class="fbc-dash" x1="366" y1="16" x2="366" y2="282" stroke="rgba(212,149,106,.45)" stroke-width="1.5" stroke-dasharray="3 5"/>
-          <text class="fbc-lab" x="374" y="30" font-family="'Space Mono',monospace" font-size="11" letter-spacing="1" fill="#d4956a">NEW SITE LIVE</text>
+          <!-- website rebuild window: ~a week and a half between the old site ending and launch -->
+          <rect x="345.1" y="42" width="21" height="240" fill="rgba(143,184,148,.10)"/>
+          <line class="fbc-dash" x1="345.1" y1="42" x2="345.1" y2="282" stroke="rgba(143,184,148,.35)" stroke-width="1.5" stroke-dasharray="3 5"/>
+          <line class="fbc-dash" x1="366" y1="42" x2="366" y2="282" stroke="rgba(143,184,148,.35)" stroke-width="1.5" stroke-dasharray="3 5"/>
+          <text class="fbc-lab" x="355.5" y="30" text-anchor="middle" font-family="'Space Mono',monospace" font-size="11" letter-spacing="1.5" fill="rgba(143,184,148,.9)">WEBSITE REBUILD</text>
           <!-- after: area + line -->
           <path d="M366 211.1 L404.9 180 L464.7 149 L524.5 113.5 L584.4 82.5 L644.2 55.9 L704 33.7 L704 282 L366 282 Z" fill="url(#fbGrad)"/>
           <polyline class="fbc-after" points="366,211.1 404.9,180 464.7,149 524.5,113.5 584.4,82.5 644.2,55.9 704,33.7" fill="none" stroke="#d4956a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -180,8 +178,8 @@
           <polyline class="fbc-before" points="46,215.5 105.8,208.8 165.6,219.9 225.5,206.6 285.3,213.3 345.1,211.1" fill="none" stroke="#6f6a60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="704" cy="33.7" r="5" fill="#d4956a" stroke="#121110" stroke-width="2"/>
           <g class="fbc-lab" font-family="'Space Mono',monospace" font-size="11" fill="#9a9184">
-            <text x="48" y="198">old site &#183; ~160 / mo</text>
-            <text x="696" y="24" text-anchor="end" fill="#e9e4d8">560 / mo</text>
+            <text x="48" y="198">before &#183; ~160 / mo</text>
+            <text x="696" y="24" text-anchor="end" fill="#e9e4d8">after &#183; 560 / mo</text>
           </g>
         </svg>
       </figure>
