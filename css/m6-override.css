@@ -411,3 +411,6 @@ a.case-url:hover { color: var(--copper); }
 @media (max-width: 700px) {
   .hero-micro { display: none; }
 }
+
+/* Back button sits bottom-right of the flip back, mirroring See results on the front */
+.fb-take .fb-back { align-self: flex-end; margin-top: 10px; }

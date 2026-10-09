@@ -34,7 +34,7 @@
   ['pointerenter','touchstart','focus'].forEach(function(ev){ open.addEventListener(ev, loadShots, { passive: true }); });
   open.addEventListener('click', function(){ loadShots(); set(true); });
   close.addEventListener('click', function(){ set(false); });
-  cta.addEventListener('click', function(){ setTimeout(function(){ set(false); }, 400); });
+  if(cta) cta.addEventListener('click', function(){ setTimeout(function(){ set(false); }, 400); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && wrap.classList.contains('flipped')) set(false); });
 
   // Gentle auto-scroll of the two page previews
