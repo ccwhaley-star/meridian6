@@ -395,3 +395,14 @@ a.case-url:hover { color: var(--copper); }
     background-size: 52px 52px;
   }
 }
+
+/* Phones: the chart SVG shrinks to ~half scale, so its type and strokes
+   roughly double in SVG units to land back at readable screen sizes */
+@media (max-width: 700px) {
+  .fb-chart svg .fbc-ax { font-size: 17px; }
+  .fb-chart svg .fbc-lab, .fb-chart svg text.fbc-lab { font-size: 20px; }
+  .fb-chart svg .fbc-mig { font-size: 16px; }
+  .fb-chart svg .fbc-after { stroke-width: 4px; }
+  .fb-chart svg .fbc-before { stroke-width: 3.5px; }
+  .fb-chart svg .fbc-dash { stroke-width: 2.5px; }
+}
