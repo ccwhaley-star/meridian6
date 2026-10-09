@@ -406,3 +406,8 @@ a.case-url:hover { color: var(--copper); }
   .fb-chart svg .fbc-before { stroke-width: 3.5px; }
   .fb-chart svg .fbc-dash { stroke-width: 2.5px; }
 }
+
+/* Phones: drop the hero microcopy line under the CTAs */
+@media (max-width: 700px) {
+  .hero-micro { display: none; }
+}
