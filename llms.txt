@@ -12,9 +12,9 @@ Meridian6 was founded by Chris Whaley, an operator who built and ranked his own 
 - Small Business AI Consulting.
 
 ## Pricing
-- Hosting + Monitoring — $249/month.
-- Content + Optimization — $649/month.
-- Full-Stack Growth — $1,249/month.
+- Hosting + Monitoring — $250/month.
+- Content + Optimization — $650/month.
+- Full-Stack Growth — $1,250/month.
 - Every plan includes a custom website build or redesign (6-month plan minimum on a new build or redesign; month-to-month after that, cancel anytime).
 All monthly plans are month-to-month with no long-term contract.
 
