@@ -29,3 +29,40 @@ Payoff: higher map rankings, more visibility, more credibility, more calls
 and jobs. This is why NAP must match the footer/schema **exactly** before any
 site launches, why every site ships complete LocalBusiness JSON-LD, and why
 GBP setup is a P1 item on every engagement.
+
+## Design references
+
+### Hospitality: Bertrand's Townhouse — https://www.bertrandstownhouse.co.uk/
+
+Chris's benchmark for any Airbnb, boutique-hotel, or small hospitality client
+(saved Oct 2026). A 14-room Bloomsbury townhouse hotel, built by UP Hotel
+Agency on WordPress. What to borrow:
+
+- **Personality over amenities.** The hotel is a character ("Stay with
+  Bertie", "Book Direct with Bertie for instant gratification"); rooms, bar and
+  building are introduced as "Meet the Rooms", "Meet Ottie's Salon". Copy sells
+  a mood, not a checklist.
+- **Photography carries it.** Dark, moody, warm-lit interiors and cocktail
+  close-ups, mostly full-bleed. The hero is a single atmospheric room shot with a
+  handwritten-script quote over it and one CTA. This only works with real,
+  professional photos of the property — budget for a shoot.
+- **Rich, restrained palette.** Deep navy and oxblood/burgundy grounds with
+  velvet-like texture, cream paper sections, thin gold framed borders and
+  botanical line illustrations as ornament.
+- **Type:** a soft display serif (Nantes) set large and often italic, a clean
+  sans (Switzer) for body and labels, and a script face reserved for the hero
+  quote only.
+- **Direct-booking push.** "Reserve" fixed top-right on every screen, plus a
+  dedicated book-direct incentive panel — the site's job is to pull bookings away
+  from OTAs (Booking.com, Expedia, Airbnb fees).
+- **Third-party proof up front.** Press credential right under the hero ("Named
+  one of The Times' 50 Best Places to Stay in the UK") and a press feature later.
+- **Local guide.** An "Explore Bloomsbury" section — neighborhood content that
+  also earns local-search relevance.
+- **Storybook navigation.** The menu is labeled "Chapters"; sections reveal on
+  scroll.
+
+Watch-outs if we adapt it: most content is hidden until scrolled into view, so
+make it visible at rest (crawlers, AI search, screenshots, slow phones); keep the
+script face to one line; and keep the entity basics from the playbook above —
+LodgingBusiness schema, NAP, GBP — under all the atmosphere.
