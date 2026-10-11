@@ -35,7 +35,7 @@ GBP setup is a P1 item on every engagement.
 ### Hospitality: Bertrand's Townhouse — https://www.bertrandstownhouse.co.uk/
 
 Chris's benchmark for any Airbnb, boutique-hotel, or small hospitality client
-(saved Oct 2026). A 14-room Bloomsbury townhouse hotel, built by UP Hotel
+(saved Oct 2026). A Bloomsbury townhouse hotel in London, built by UP Hotel
 Agency on WordPress. What to borrow:
 
 - **Personality over amenities.** The hotel is a character ("Stay with
