@@ -414,3 +414,10 @@ a.case-url:hover { color: var(--copper); }
 
 /* Back button sits bottom-right of the flip back, mirroring See results on the front */
 .fb-take .fb-back { align-self: flex-end; margin-top: 10px; }
+
+/* Hero eyebrow as a service row: what we sell, read at a glance */
+.hero-pillars { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; color: var(--copper); }
+.hero-pillars i { width: 4px; height: 4px; border-radius: 50%; background: var(--text3); opacity: .6; }
+@media (max-width: 600px) { .hero-pillars { gap: 6px 12px; } }
+.hero-tile .hero-pillars { font-family: var(--sans); font-size: var(--fs-md); text-transform: none; letter-spacing: 0; font-weight: 500; gap: 6px 18px; line-height: 1.4; }
+@media (max-width: 600px) { .hero-tile .hero-pillars { font-size: 17px; letter-spacing: 0; gap: 6px 12px; } }
