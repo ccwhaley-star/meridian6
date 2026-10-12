@@ -12,7 +12,9 @@
       cta   = document.getElementById('fb-cta');
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  wrap.classList.add('teasing');
   function set(on){
+    if(on) wrap.classList.remove('teasing');
     wrap.classList.toggle('flipped', on);
     open.setAttribute('aria-expanded', on ? 'true' : 'false');
     if(on){ back.removeAttribute('inert'); front.setAttribute('inert',''); setTimeout(function(){ title.focus({preventScroll:true}); }, 60); }

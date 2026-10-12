@@ -356,20 +356,21 @@ a.case-url:hover { color: var(--copper); }
 /* soft halo spilling past the right edge */
 .hero-flip::before { content: ""; position: absolute; top: 4%; bottom: 4%; right: -60px; width: 170px; border-radius: 50%;
   background: radial-gradient(closest-side, rgba(226,166,116,.95), rgba(201,138,70,.4) 50%, transparent 76%);
-  filter: blur(22px); opacity: 0; pointer-events: none;
-  animation: m6-leak 4.6s ease-in-out 1.4s infinite; }
+  filter: blur(22px); opacity: 0; pointer-events: none; }
 /* crisp light-crack hugging the flap's edge: lives on the rotating element so it
    lifts with the flap, as if the light is escaping from behind it */
 .flip-inner { position: relative; }
 .flip-inner::after { content: ""; position: absolute; top: 6%; bottom: 6%; right: -3px; width: 4px; border-radius: 4px;
   background: linear-gradient(rgba(226,166,116,0), rgba(234,180,130,.95) 25%, rgba(234,180,130,.95) 75%, rgba(226,166,116,0));
   box-shadow: 0 0 18px 4px rgba(212,149,106,.55); opacity: 0; pointer-events: none;
-  transform: translateZ(-2px);
-  animation: m6-leak 4.6s ease-in-out 1.4s infinite; }
-.hero-flip.flipped::before, .hero-flip.flipped .flip-inner::after { animation: none; opacity: 0; }
+  transform: translateZ(-2px); }
+/* The tease runs only until the first flip (hero-flip.js drops .teasing then).
+   Its left-edge hinge must never be active during a flip, or the card swings
+   wide around that edge instead of turning in place. */
+.hero-flip.teasing::before, .hero-flip.teasing .flip-inner::after { animation: m6-leak 4.6s ease-in-out 1.4s infinite; }
 /* The nudge animates the separate `rotate` property, never `transform`:
    the flip's transform transition must stay unopposed or the turn snaps. */
-.hero-flip:not(.flipped) .flip-inner { transform-origin: left center; animation: m6-nudge 4.6s cubic-bezier(.45,.05,.3,1) 1.4s infinite; }
+.hero-flip.teasing .flip-inner { transform-origin: left center; animation: m6-nudge 4.6s cubic-bezier(.45,.05,.3,1) 1.4s infinite; }
 @keyframes m6-nudge {
   0%, 28%, 100% { rotate: y 0deg; }
   8%  { rotate: y -7deg; }
@@ -383,7 +384,7 @@ a.case-url:hover { color: var(--copper); }
   22% { opacity: .8; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-flip::before, .flip-inner::after, .hero-flip:not(.flipped) .flip-inner { animation: none; }
+  .hero-flip.teasing::before, .hero-flip.teasing .flip-inner::after, .hero-flip.teasing .flip-inner { animation: none; }
 }
 
 /* Phones: the survey grid reads at desktop opacity but vanishes on small bright
