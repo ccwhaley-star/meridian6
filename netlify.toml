@@ -2,6 +2,67 @@
   publish = "."
   functions = "netlify/functions"
 
+# The repo root is the publish folder; keep internal files off the web.
+[[redirects]]
+  from = "/CLAUDE.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package-lock.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/flint-digital-seo-audit.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/flint-digital-design-audit.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/flint-digital-mobile-audit.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/og-image.html"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/og-image"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
 [[redirects]]
   from = "/api/audit"
   to = "/.netlify/functions/audit-start"
@@ -36,8 +97,10 @@
   status = 301
   force = true
 
+# The site's own Netlify address (the name "meridian6" belongs to another
+# Netlify site, so this one keeps its original name).
 [[redirects]]
-  from = "https://meridian6.netlify.app/*"
+  from = "https://flint-digital.netlify.app/*"
   to = "https://meridian6.ai/:splat"
   status = 301
   force = true
@@ -57,3 +120,9 @@
   for = "/shared/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

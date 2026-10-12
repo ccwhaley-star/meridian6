@@ -422,3 +422,6 @@ a.case-url:hover { color: var(--copper); }
 @media (max-width: 600px) { .hero-pillars { gap: 6px 12px; } }
 .hero-tile .hero-pillars { font-family: var(--sans); font-size: var(--fs-md); text-transform: none; letter-spacing: 0; font-weight: 500; gap: 6px 18px; line-height: 1.4; }
 @media (max-width: 600px) { .hero-tile .hero-pillars { font-size: 17px; letter-spacing: 0; gap: 6px 12px; } }
+
+/* Read by screen readers, hidden on screen (keeps heading levels in order) */
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
