@@ -12,7 +12,7 @@ Meridian6 was founded by Chris Whaley, an operator who built and ranked his own 
 - Small Business AI Consulting.
 
 ## Pricing
-- Express — $175/month. A 5–7 page professional site, live in two weeks: conversion-focused copy, Google Business Profile setup, hosting, SSL, backups, uptime monitoring and 2 hours of edits a month. No upfront fee, 6-month minimum; pay yearly and get 2 months free ($1,750/year).
+- Express — $125/month. A 5–7 page professional site, live in two weeks: conversion-focused copy, Google Business Profile setup, hosting, SSL, backups, uptime monitoring and 2 hours of edits a month. No upfront fee, 6-month minimum; pay yearly and get 2 months free ($1,250/year).
 - Grow — $750/month. Everything in Express, plus 2 SEO and AI-search articles a month, Google Business Profile management, local citation building and cleanup (consistent listings on Bing, Apple, Yelp and other directories), review monitoring, search ranking and AI citation tracking, quarterly site refreshes and a monthly analytics deep-dive.
 - Full Growth Engine — $1,500/month. Everything in Grow, plus 4 articles a month, AI search optimization and monitoring, reputation management and review responses, and a dedicated strategist. Google Ads build and management is quoted separately.
 - The Lighthouse guarantee: every site we build scores green on Google Lighthouse for performance, accessibility, best practices and SEO, or we fix it at no charge.
