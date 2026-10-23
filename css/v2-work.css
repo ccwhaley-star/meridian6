@@ -1,45 +1,84 @@
-/* Meridian6 V2 — Work Page Styles */
+/* Meridian6 V2 — Work Page Styles
+   Case-study index: spec strip, numbered study cards led by one measured
+   number, engagement phases, what we won't promise, then the live sites. */
 
-/* CASE STUDIES */
-.cases{max-width:1100px;margin:0 auto;padding:0 48px 120px;position:relative;z-index:2}
-.case{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:80px 0;border-bottom:1px solid var(--line)}
-.case:last-child{border-bottom:none}
-.case:nth-child(even){direction:rtl}
-.case:nth-child(even) > *{direction:ltr}
+/* HEADER: spec strip above the H1 */
+.work-head{padding-bottom:72px}
+.spec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0 0 64px;padding:0 0 26px;border-bottom:1px solid var(--line)}
+.spec div{min-width:0}
+.spec dt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:8px}
+.spec dd{margin:0;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--text);font-weight:700}
+.work-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 
+/* SECTION HEADS: big title left, mono note right, hairline under */
+.studies,.engage,.nopromise,.lives{max-width:1100px;margin:0 auto;padding:0 48px 120px;position:relative;z-index:2}
+.studies-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding-bottom:22px;margin-bottom:48px;border-bottom:1px solid var(--line)}
+.studies-head h2{font-size:var(--fs-3xl);font-weight:var(--fw-thin);letter-spacing:var(--ls-h1);line-height:var(--lh-tight);color:var(--text);max-width:16ch}
+.studies-head p{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);text-align:right;white-space:nowrap;padding-bottom:8px}
+
+/* STUDY CARDS */
+.study-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.study{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:36px 36px 28px}
+.study-no{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);padding-bottom:10px;border-bottom:1px solid var(--copper);margin-bottom:36px}
+.study-stat{font-family:var(--font-display);font-weight:800;font-size:clamp(64px,7vw,104px);line-height:.9;letter-spacing:-.04em;color:var(--copper)}
+.study-stat small{font-size:.42em;letter-spacing:-.01em;margin-left:.12em}
+.study-cap{font-family:var(--mono);font-size:11px;line-height:1.7;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);max-width:32em;margin:16px 0 30px}
+.study h3{font-family:var(--font-display);font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1.05;letter-spacing:-.02em;color:var(--text);margin-bottom:14px}
+.study-play{font-size:var(--fs-base);line-height:var(--lh-body);color:var(--text2);max-width:30em;margin-bottom:30px}
+.study-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3)}
+.study-foot a{color:var(--text);font-weight:700;text-decoration:none;white-space:nowrap;padding:8px 0}
+.study-foot a:hover,.study-foot a:focus-visible{color:var(--copper)}
+/* an odd card out spans the row: number left, story right */
+@media(min-width:901px){
+  .study:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:48px;align-items:start}
+  .study:last-child:nth-child(odd) .study-no,.study:last-child:nth-child(odd) .study-stat,.study:last-child:nth-child(odd) .study-cap{grid-column:1}
+  .study:last-child:nth-child(odd) .study-no{justify-self:start}
+  .study:last-child:nth-child(odd) h3{grid-column:2;grid-row:1 / span 2;align-self:end;margin-bottom:0}
+  .study:last-child:nth-child(odd) .study-play{grid-column:2;grid-row:3;margin-top:14px}
+  .study:last-child:nth-child(odd) .study-foot{grid-column:1/-1}
+  .live:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 12px)}
+}
+
+/* ENGAGEMENT PHASES */
+.phases{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.phases li{display:grid;grid-template-columns:150px 140px minmax(0,1fr);align-items:baseline;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}
+.phases li:last-child{border-bottom:0}
+.ph-no{font-family:var(--font-display);font-weight:800;font-size:clamp(56px,6vw,88px);line-height:.85;letter-spacing:-.04em;color:var(--copper)}
+.ph-when{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text3)}
+.phases h3{font-family:var(--font-display);font-weight:800;font-size:var(--fs-lg);letter-spacing:-.01em;color:var(--text);margin-bottom:8px}
+.phases p{color:var(--text2);line-height:var(--lh-body);max-width:38em}
+
+/* WHAT WE WON'T PROMISE */
+.np-lede{color:var(--text2);margin:-20px 0 24px;font-size:var(--fs-base)}
+.np-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.np{background:var(--card);border:1px solid var(--line);border-top:2px solid var(--copper);border-radius:0 0 12px 12px;padding:24px 24px 26px}
+.np h3{font-size:var(--fs-base);font-weight:var(--fw-bold);color:var(--copper2);margin-bottom:10px}
+.np p{font-size:var(--fs-sm);line-height:var(--lh-body);color:var(--text2)}
+
+/* SEE THEM LIVE: real sites in browser frames */
+.live-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px}
+.live{margin:0}
+.live figcaption{margin-top:12px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text)}
+.live figcaption span{color:var(--text3)}
 .case-browser{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .case-bar{background:var(--surface);padding:8px 14px;display:flex;gap:5px;align-items:center;border-bottom:1px solid var(--line)}
 .case-dot{width:7px;height:7px;border-radius:50%}
 .case-dot:nth-child(1){background:#6b5e52}.case-dot:nth-child(2){background:#5a5549}.case-dot:nth-child(3){background:#4a4640}
-.case-url{margin-left:10px;font-family:var(--mono);font-size:var(--fs-xs);color:var(--text2);background:rgba(255,255,255,.02);padding:3px 10px;border-radius:2px;flex:1;text-align:center;letter-spacing:1px}
-.case-iframe-wrap{
-  width:100%;aspect-ratio:16/10;overflow:hidden;position:relative;
-  background:var(--surface);
-}
-.case-iframe-wrap iframe{
-  position:absolute;top:0;left:0;
-  width:1440px;height:900px;border:none;
-  transform:scale(0.36);transform-origin:top left;
-  pointer-events:none;
-}
-
-.case-tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;margin-bottom:12px;font-weight:400}
-.case:nth-child(3n+1) .case-tag{color:var(--copper)}
-.case:nth-child(3n+2) .case-tag{color:var(--slate)}
-.case:nth-child(3n) .case-tag{color:var(--sage)}
-.case-info h2{font-size:var(--fs-lg);font-weight:var(--fw-semibold);margin-bottom:10px;color:var(--text2);letter-spacing:var(--ls-h3);line-height:var(--lh-head)}
-.case-desc{font-size:var(--fs-base);line-height:var(--lh-body);color:var(--text2);font-weight:400;margin-bottom:28px}
-.case-result{margin-top:20px;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.5px;color:var(--text2);line-height:1.6}
-.case-result strong{color:var(--text2);font-weight:700}
-.case-link{display:inline-block;margin-top:20px;font-family:var(--mono);font-size:var(--fs-sm);letter-spacing:var(--ls-nav);text-transform:uppercase;text-decoration:none;transition:color .3s}
-.case:nth-child(3n+1) .case-link{color:var(--copper)}
-.case:nth-child(3n+2) .case-link{color:var(--slate)}
-.case:nth-child(3n) .case-link{color:var(--sage)}
-.case-link:hover{color:var(--text2)}
+.case-url{margin-left:10px;font-family:var(--mono);font-size:var(--fs-xs);color:var(--text2);background:rgba(255,255,255,.02);padding:3px 10px;border-radius:2px;flex:1;text-align:center;letter-spacing:1px;text-decoration:none}
+.case-iframe-wrap{width:100%;aspect-ratio:16/10;overflow:hidden;position:relative;background:var(--surface)}
+/* the site renders at 4x the frame's width (a desktop layout) and is scaled to fit */
+.case-iframe-wrap iframe{position:absolute;top:0;left:0;width:400%;height:400%;border:none;transform:scale(.25);transform-origin:top left;pointer-events:none}
+.case-overlay{position:absolute;inset:0;z-index:1}
 
 /* ============ RESPONSIVE ============ */
 @media(max-width:900px){
-  .cases{padding:0 24px 72px}
-  .case{grid-template-columns:1fr;gap:32px;padding:48px 0}
-  .case:nth-child(even){direction:ltr}
+  .work-head{padding-bottom:48px}
+  .spec{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:44px}
+  .studies,.engage,.nopromise,.lives{padding:0 24px 80px}
+  .studies-head{flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:32px}
+  .studies-head p{text-align:left;white-space:normal}
+  .study-grid,.live-grid,.np-grid{grid-template-columns:minmax(0,1fr)}
+  .study{padding:28px 22px 22px}
+  .study-no{margin-bottom:26px}
+  .phases li{grid-template-columns:minmax(0,1fr);gap:6px;padding:24px 0}
 }
