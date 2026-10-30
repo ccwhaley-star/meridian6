@@ -207,7 +207,7 @@
       <div class="metric-card">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20V6M12 6L6 12M12 6L18 12" stroke="#c47a4a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="5" r="1.5" fill="#d4956a"/></svg>
         <div class="metric-num">3.5&#215;</div>
-        <p class="metric-label">More qualified leads</p>
+        <p class="metric-label">More monthly visitors</p>
       </div>
     </div>
   </div>
@@ -503,27 +503,29 @@
 
   var catConfig={technical:{label:'Technical',c:C.copper},seo:{label:'SEO',c:C.slate},local_search:{label:'Local Search',c:C.sage},aeo:{label:'AEO · AI Search',c:C.copper2},content:{label:'Content',c:'#b8a88a'},reputation:{label:'Reputation',c:C.slate}};
 
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+
   function renderResults(r){
     var g=letterGrade(r.overall_score||0);
     var h='';
     // Header + Grade
     h+='<div style="background:'+C.card+';border:1px solid '+C.line+';border-radius:6px;overflow:hidden;margin-bottom:16px">';
     h+='<div style="padding:20px 24px;border-bottom:1px solid '+C.line+';display:flex;justify-content:space-between"><div>';
-    h+='<h2 style="font-size:20px;font-weight:600;color:'+C.text+';margin-bottom:4px">'+(r.business_name||r.domain)+'</h2>';
-    h+='<p style="font-size:12px;color:'+C.dim+'">'+r.domain+(r.business_type?' · '+r.business_type:'')+(r.location?' · '+r.location:'')+'</p>';
+    h+='<h2 style="font-size:20px;font-weight:600;color:'+C.text+';margin-bottom:4px">'+esc(r.business_name||r.domain)+'</h2>';
+    h+='<p style="font-size:12px;color:'+C.dim+'">'+esc(r.domain)+(r.business_type?' · '+esc(r.business_type):'')+(r.location?' · '+esc(r.location):'')+'</p>';
     h+='</div><div style="text-align:right;font-family:monospace;font-size:9px;color:'+C.dim+';letter-spacing:1px">Meridian<span style="color:'+C.copper+'">6</span><br>Audit Report</div></div>';
     h+='<div style="padding:28px;text-align:center;border-bottom:1px solid '+C.line+'">';
     h+='<div style="display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;border:3px solid '+g.c+';margin-bottom:8px"><span style="font-family:monospace;font-size:28px;font-weight:700;color:'+g.c+'">'+g.l+'</span></div>';
-    h+='<div style="font-family:monospace;font-size:13px;color:'+C.dim+'">'+r.overall_score+' / 100</div>';
-    if(r.summary) h+='<p style="font-size:13px;color:'+C.dim+';font-weight:300;margin-top:12px;line-height:1.7;max-width:500px;margin-left:auto;margin-right:auto">'+r.summary+'</p>';
+    h+='<div style="font-family:monospace;font-size:13px;color:'+C.dim+'">'+esc(r.overall_score)+' / 100</div>';
+    if(r.summary) h+='<p style="font-size:13px;color:'+C.dim+';font-weight:300;margin-top:12px;line-height:1.7;max-width:500px;margin-left:auto;margin-right:auto">'+esc(r.summary)+'</p>';
     h+='</div>';
     // Breakdown bars
     h+='<div style="padding:24px"><div style="font-family:monospace;font-size:10px;letter-spacing:3px;color:'+C.copper+';margin-bottom:16px;font-weight:700">BREAKDOWN</div>';
     Object.keys(catConfig).forEach(function(k){
       var cat=r[k];if(!cat||cat.score==null)return;
       var bc=cat.score>=80?C.sage:cat.score>=50?'#b8a88a':C.red;
-      h+='<div style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:13px;color:'+C.dim+'">'+catConfig[k].label+'</span><span style="font-family:monospace;font-size:13px;font-weight:700;color:'+bc+'">'+cat.score+'/100</span></div>';
-      h+='<div style="height:4px;background:'+C.line+';border-radius:2px"><div style="height:4px;width:'+cat.score+'%;background:'+bc+';border-radius:2px;transition:width 1s ease"></div></div></div>';
+      h+='<div style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:13px;color:'+C.dim+'">'+catConfig[k].label+'</span><span style="font-family:monospace;font-size:13px;font-weight:700;color:'+bc+'">'+esc(cat.score)+'/100</span></div>';
+      h+='<div style="height:4px;background:'+C.line+';border-radius:2px"><div style="height:4px;width:'+esc(cat.score)+'%;background:'+bc+';border-radius:2px;transition:width 1s ease"></div></div></div>';
     });
     h+='</div></div>';
     // Category cards
@@ -534,7 +536,7 @@
       h+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><span style="font-family:monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:'+cfg.c+';font-weight:700">'+cfg.label+'</span>';
       h+='<span style="background:'+gc.bg+';color:'+gc.c+';padding:3px 10px;border-radius:3px;font-family:monospace;font-size:11px;font-weight:700;letter-spacing:1px">'+gr.label+'</span></div>';
       cat.findings.forEach(function(f){
-        h+='<div style="display:flex;gap:10px;padding:6px 0;font-size:13px;color:'+C.dim+';font-weight:300;line-height:1.6"><span style="font-family:monospace;font-size:10px;color:'+cfg.c+';flex-shrink:0">&mdash;</span><span>'+f+'</span></div>';
+        h+='<div style="display:flex;gap:10px;padding:6px 0;font-size:13px;color:'+C.dim+';font-weight:300;line-height:1.6"><span style="font-family:monospace;font-size:10px;color:'+cfg.c+';flex-shrink:0">&mdash;</span><span>'+esc(f)+'</span></div>';
       });
       h+='</div>';
     });
@@ -544,8 +546,8 @@
       h+='<div style="font-family:monospace;font-size:10px;letter-spacing:2px;color:'+C.red+';margin-bottom:16px;font-weight:700">COMPETITORS OUTRANKING YOU</div>';
       r.competitors.forEach(function(comp,i){
         h+='<div style="display:flex;justify-content:space-between;padding:10px 0;'+(i===0?'border-top:1px solid '+C.line2+';':'')+';gap:16px">';
-        h+='<span style="font-size:14px;font-weight:600;color:'+C.text2+'">'+comp.name+'</span>';
-        h+='<span style="font-size:12px;color:'+C.dim+';font-weight:300;text-align:right">'+comp.advantage+'</span></div>';
+        h+='<span style="font-size:14px;font-weight:600;color:'+C.text2+'">'+esc(comp.name)+'</span>';
+        h+='<span style="font-size:12px;color:'+C.dim+';font-weight:300;text-align:right">'+esc(comp.advantage)+'</span></div>';
       });
       h+='</div>';
     }
@@ -554,7 +556,7 @@
       h+='<div style="background:rgba(196,122,74,.04);border:1px solid rgba(196,122,74,.15);border-radius:6px;padding:24px;margin-bottom:24px">';
       h+='<div style="font-family:monospace;font-size:10px;letter-spacing:2px;color:'+C.copper+';margin-bottom:16px;font-weight:700">TOP 3 THINGS TO FIX NOW</div>';
       r.top_3_fixes.forEach(function(f,i){
-        h+='<div style="display:flex;gap:12px;padding:8px 0;font-size:14px;color:'+C.text2+';line-height:1.6"><span style="font-family:monospace;font-size:16px;font-weight:700;color:'+C.copper+';min-width:24px">'+(i+1)+'.</span><span>'+f+'</span></div>';
+        h+='<div style="display:flex;gap:12px;padding:8px 0;font-size:14px;color:'+C.text2+';line-height:1.6"><span style="font-family:monospace;font-size:16px;font-weight:700;color:'+C.copper+';min-width:24px">'+(i+1)+'.</span><span>'+esc(f)+'</span></div>';
       });
       h+='</div>';
     }
